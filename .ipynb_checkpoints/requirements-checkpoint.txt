@@ -1,0 +1,10 @@
+ipython==8.12.3
+ipython==8.30.0
+langchain==0.3.24
+langchain_community==0.3.22
+langchain_core==0.3.56
+langchain_groq==0.3.2
+langgraph==0.3.34
+pydantic==2.11.3
+python-dotenv==1.1.0
+streamlit==1.44.1
