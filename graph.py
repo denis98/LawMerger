@@ -151,8 +151,6 @@ class AmendmentParserState(TypedDict):
 
 
 def load_amendments(state: AmendmentParserState) -> AmendmentParserState:
-    
-    
     response = extract_chain.invoke({"input": state.get("amendments")})
     
     pyparser = PydanticOutputParser(pydantic_object=Instructions)
@@ -168,14 +166,7 @@ def load_amendments(state: AmendmentParserState) -> AmendmentParserState:
 
 
 def parse_original_law(state: AmendmentParserState) -> AmendmentParserState:
-    with open("data.pkl", "rb") as f:
-        sections = pickle.load(f)
-        return {
-            **state,
-            "sections": sections
-        }
-        
-    #res = law_parser_chain.invoke({"law": state.get("original")})
+    res = law_parser_chain.invoke({"law": state.get("original")})
     
     return {
         **state,
